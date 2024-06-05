@@ -347,31 +347,33 @@ Linux codespaces-842330 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 ```
 11. What is the available free memory in the system. ***(1 mark)***
 ```bash
-
+591Mi
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)*** 
 ```bash
-
+20771828 KB or 20.7 GB
 ```
 13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
 ```bash
-
+Version: Ubuntu 22.04.1
+Hardware architecture: x86_64
 ```
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
 ```bash
-
+ls - used to list file and directories in a directory
+ls -asl - list all files including the hidden file along with size in blocks
 ```
 15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
 ```bash
-
+2560 4K pages
 ```
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
 ```bash
-
+3125.815 MHz
 ```
 17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
 ```bash
-
+PID 3666 - utilize approximately 2.3% of CPU 
 ```
 ## Running your own container instance.
 
