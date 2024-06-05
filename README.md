@@ -25,8 +25,10 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** __https://github.com/hmtori/OSProject__.
-2. How many files and folders are in this repository. ***(1 mark)*** __Folder = 1, File = 6__.
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** 
+__https://github.com/hmtori/OSProject__.
+2. How many files and folders are in this repository. ***(1 mark)*** 
+__Folder = 1, File = 6__.
 
 
 ## Exploring github codespaces
@@ -58,10 +60,13 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Ubuntu Linux__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __8 GB RAM and 
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
+__Ubuntu Linux__.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
+__8 GB RAM and 
  32 GB storage, up to  32 cores, 64 GB RAM and 128 GB storage__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __So the changes of the work will be saved to the main repository__.
+3. Why must we commit and sync our current work on source control? ***(1 mark)***
+__So the changes of the work will be saved to the main repository__.
 
 ## Exploring the Terminal
 
@@ -388,12 +393,19 @@ docker run --detach -it debian
 CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
 f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
 ```
+```bash
+@hmtori ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+764822f9c5a6   debian    "bash"    23 seconds ago   Up 22 seconds             modest_banzai
+```
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
 ```bash
 docker exec -i -t romantic_jackson /bin/bash
 ```
-
+```bash
+docker exec -i -t modest_banzai /bin/bash
+```
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
 
 ```bash
@@ -407,6 +419,10 @@ root@f65be1987f84:~# nano helloworld.txt
 ```
 
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
+```bash
+root@764822f9c5a6:~# ls -l helloworld.txt
+-rw-r--r-- 1 root root 23 Jun  5 13:15 helloworld.txt
+```
 
 6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
 ```bash 
@@ -418,7 +434,21 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
 ```
+```bash
+@hmtori ➜ /workspaces/OSProject (main) $ docker stop modest_banzai
+modest_banzai
 
+@hmtori ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                            PORTS     NAMES
+764822f9c5a6   debian    "bash"    13 minutes ago   Exited (137) About a minute ago             modest_banzai
+
+@hmtori ➜ /workspaces/OSProject (main) $ docker restart modest_banzai
+modest_banzai
+
+@hmtori ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+764822f9c5a6   debian    "bash"    14 minutes ago   Up 10 seconds             modest_banzai
+```
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
 ```bash 
@@ -430,11 +460,27 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
 ```
+```bash
+@hmtori ➜ /workspaces/OSProject (main) $ docker stop modest_banzai
+modest_banzai
+
+@hmtori ➜ /workspaces/OSProject (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
+764822f9c5a6   debian    "bash"    15 minutes ago   Exited (137) 26 seconds ago             modest_banzai
+
+@hmtori ➜ /workspaces/OSProject (main) $ docker rm modest_banzai
+
+helloworld.txt not exist anymore
+```
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+__The file is isolated and ephemeral - any changes made to the file system during the runtime of the container is stored within the container's writable layers__.
+__a) containers are isolated from each other and from the host system__.
+__b) immutable infrastructure__.
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+__Yes__.
 
 ## Running your own container with persistent storage
 
