@@ -8,7 +8,7 @@ Team Mates:
 <br>
 |                  NAME                 |    MATRIC NUMBER   |
 | ------------------------------------- | -------------------|
-|    |       *******      |
+|   NURINHANY MYSARA BINTI NOOR HASLAN  |       2211492      |
 
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
