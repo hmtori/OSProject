@@ -1,10 +1,10 @@
 # OSProject Running Containers for Application Development
 
-Group Name: __Fill your team name__. 
+Group Name: __BSS__. 
 
 Section: __02__. 
 
-Team Mates: 
+Team Mate: 
 <br>
 |                  NAME                 |    MATRIC NUMBER   |
 | ------------------------------------- | -------------------|
