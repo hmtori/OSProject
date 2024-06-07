@@ -760,8 +760,6 @@ docker run --name nodejs-container --network mysqlnet -p 3000:3000 -d nodejs-app
 ```
 ```bash
 docker network connect nodejsnet mysql-container
-
-
 ```
 
 
