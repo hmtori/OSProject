@@ -758,6 +758,9 @@ __Fill answer here__.
 ```bash
 docker run --name nodejs-container --network mysqlnet -p 3000:3000 -d nodejs-app
 
+docker network connect nodejsnet mysql-container
+
+
 ```
 
 
