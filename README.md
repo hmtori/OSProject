@@ -576,7 +576,12 @@ __Rednet Gateway = 172.19.0.1__>
 4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
 __Bluenet Network Address = 172.18.0.0__.
 __Rednet Network Address = 172.19.0.0__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
+__c1 tried to ping c2__.
+```bash
+@hmtori ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+ping: bad address 'c2'
+```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -588,8 +593,21 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)*** 
+__Yes__.
+```bash
+@hmtori ➜ /workspaces/OSProject (main) $ docker exec c1 ping c2
+PING c2 (172.20.0.3): 56 data bytes
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.127 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.095 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.144 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.104 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.099 ms
+64 bytes from 172.20.0.3: seq=5 ttl=64 time=0.124 ms
+64 bytes from 172.20.0.3: seq=6 ttl=64 time=0.105 ms
+```
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+__Both c1 and c2 are now connected to the same docker network = bridgenet__.
 
 ## Intermediate Level (10 marks bonus)
 
