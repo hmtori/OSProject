@@ -566,10 +566,16 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
+__lightweight and versatile Unix utility that combines several common command-line tools into a single executable <br>dock__.
+__to specify a name for the BusyBox instance when it is invoked__.
 2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
+__Bluenet Gateway= 172.18.0.1__.
+__Rednet Gateway = 172.19.0.1__>
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
+__Bluenet Network Address = 172.18.0.0__.
+__Rednet Network Address = 172.19.0.0__.
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
 
 ## Bridging two SUB Networks
