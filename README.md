@@ -510,8 +510,8 @@ __group = root__.
 sudo chown -R codespace:codespace myroot
 
 ```
-*** __Yes__. <br>***
-***__permission = -rw-rw-rw- <br>__.
+ __Yes however I cannot commit the changes since it said 'Git: open("myroot/.bash_history"): Permission denied' thus, i deleted the file I created to check__. <br>***
+__permission = -rw-rw-rw- <br>__.
 __user = codespace <br>__.
 __group = codespace__***
 
