@@ -84,7 +84,7 @@ codespace
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
 1. Run the command **pwd** . ***(1 mark)*** 
-```bash a
+```bash 
 @hmtori ➜ /workspaces/OSProject (main) $ pwd
 /workspaces/OSProject
 ```
@@ -569,7 +569,17 @@ docker run -itd --net rednet --name c2 busybox sh
 1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
 __lightweight and versatile Unix utility that combines several common command-line tools into a single executable <br>dock__.
 __to specify a name for the BusyBox instance when it is invoked__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
+__@hmtori ➜ /workspaces/OSProject (main) $ docker network ls__
+__NETWORK ID     NAME        DRIVER    SCOPE__
+__4a2a8a0c56dd   bluenet     bridge    local__
+__0bd5c9f7c88b   bridge      bridge    local__
+__996d57b119a2   bridgenet   bridge    local__
+__183c9bdef1df   host        host      local__
+__ac77a76babab   mysqlnet    bridge    local__
+__260b4036cd6d   nodejsnet   bridge    local__
+__91016d5a9e97   none        null      local__
+__921e1c9248f6   rednet      bridge    local__.
 3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
 __Bluenet Gateway= 172.18.0.1__.
 __Rednet Gateway = 172.19.0.1__>
